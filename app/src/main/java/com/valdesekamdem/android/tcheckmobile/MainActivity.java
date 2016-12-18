@@ -16,6 +16,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * Activité principale de l'application.
+ * C'est elle qui contient le Menu de gauche. {@link DrawerLayout}
+ */
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -28,10 +32,15 @@ public class MainActivity extends AppCompatActivity
 
         setupNavigationView(toolbar);
 
+        // On définit le fragment par default de l'activité.
         HomeFragment homeFragment = new HomeFragment();
         setFragment(homeFragment);
     }
 
+    /**
+     * Permet de configurer la Menu de gauche.
+     * @param toolbar   la toolbar
+     */
     private void setupNavigationView(Toolbar toolbar) {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -53,6 +62,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    /**
+     * Permet de mettre le fragment courant de l'activité.
+     *
+     * @param fragment  le fragment à placer.
+     */
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -60,29 +74,11 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.commit();
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle
-// action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
+    /**
+     * Ecoute le clique un élément du Menu.
+     * @param item
+     * @return
+     */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -99,15 +95,6 @@ public class MainActivity extends AppCompatActivity
             AddStudentFragment addStudentFragment = new AddStudentFragment();
             setFragment(addStudentFragment);
         }
-//        else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

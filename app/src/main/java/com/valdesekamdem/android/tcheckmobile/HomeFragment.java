@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * Le {@link Fragment} de l'accueil.
  */
 public class HomeFragment extends Fragment {
 

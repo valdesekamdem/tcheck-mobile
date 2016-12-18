@@ -15,6 +15,18 @@ public class Student {
     private String level;
     private String comments;
 
+    public Student() {
+    }
+
+    public Student(String firstName, String lastName, String email, String phoneNumber, String level, String comments) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.level = level;
+        this.comments = comments;
+    }
+
     public String getFirstName() {
         return firstName;
     }
