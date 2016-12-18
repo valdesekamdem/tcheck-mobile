@@ -4,12 +4,13 @@
     android:layout_height="match_parent"
     tools:context="com.valdesekamdem.android.tcheckmobile.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:gravity="center"
-        android:textSize="24sp"
+        android:textSize="36sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Club Télécom FGI" />
+        android:text="Club \n Télécom FGI"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"/>
 
 </FrameLayout>
