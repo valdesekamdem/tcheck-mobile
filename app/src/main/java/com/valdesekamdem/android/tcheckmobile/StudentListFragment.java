@@ -73,7 +73,7 @@ public class StudentListFragment extends Fragment {
 
     private void setStudentListView(List<Student> students) {
 
-        if (students != null) {
+        if (students != null && getActivity() != null) {
             ArrayAdapter<Student> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, students);
             studentsListView.setAdapter(adapter);
             studentsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
